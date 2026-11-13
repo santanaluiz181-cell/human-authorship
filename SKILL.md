@@ -43,9 +43,9 @@ Antes de aceitar qualquer argumento como fechado, aplique as 5 perguntas de atri
 
 ### Modo 3: Auditoria Forense Pos-Rascunho (Portao Metrico Sem Reescrita)
 Quando o **autor humano** entregar seu proprio rascunho escrito por ele mesmo:
-1. Rode o auditor metrico deterministico (inspirado nos portoes de Uncle Bob):
-   ```powershell
-   python "C:\Users\tharcio\.gemini\config\skills\human-authorship\scripts\audit_human_voice.py" "<caminho_do_rascunho.md>"
+1. Rode o auditor metrico deterministico a partir da pasta onde esta skill esta instalada (inspirado nos portoes de Uncle Bob):
+   ```bash
+   python scripts/audit_human_voice.py "<caminho_do_rascunho.md>"
    ```
 2. Entregue **diagnostico puro + perguntas de revisao** (nunca reescreva as frases):
    - **Cadencia / Burstiness:** Se o desvio-padrao do tamanho das frases estiver `< 6.0` palavras (metronomo de IA onde todas as frases tem 15-22 palavras), aponte exatamente os trechos monotonos e pergunte onde cabe uma frase seca de 3-6 palavras.
@@ -54,7 +54,7 @@ Quando o **autor humano** entregar seu proprio rascunho escrito por ele mesmo:
 
 ---
 
-## 2. Integracao com o Ecossistema
-- **Explorar material bruto:** combine com `writing-fragments`.
-- **Auditar lexicos proibidos:** herda lista de `antislop-copywriting` e `luiz-antonio-voice`.
-- **Checagem factual de fontes citadas:** delegue apenas verificacao documental ao `ultimate-research`, jamais redacao.
+## 2. Referencias & Integracao Opcional
+- **Cenarios praticos de uso (Detox de IA, Imprensa, Academia, Juridico, CLI):** consulte [examples/scenarios.md](./examples/scenarios.md).
+- **Protocolos socraticos por dominio:** consulte [references/socratic-protocols.md](./references/socratic-protocols.md).
+- **Integracoes opcionais (quando instaladas no mesmo ambiente):** `writing-fragments` (captura bruta), `antislop-copywriting` / `luiz-antonio-voice` (lexicos extras) e `ultimate-research` (apenas checagem documental, jamais redacao).
